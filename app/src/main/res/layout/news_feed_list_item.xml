@@ -14,35 +14,36 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/_10sdp"
         app:cardCornerRadius="@dimen/_15sdp"
-        app:cardBackgroundColor="@color/dark_gray">
+        app:cardBackgroundColor="@color/screen_bg">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <ImageView
                 android:id="@+id/home_news_img"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_150sdp"
-                android:scaleType="centerCrop"
-                app:bindImgUrl="@{model.image_url}"
+                android:layout_height="wrap_content"
+                app:bindImgUrl="@{model.thumbnail_url}"
                 app:bindProgressItem="@{progressBar}"
+                app:bindImgWidth="@{model.thumbnail_width}"
+                app:bindImgHeight="@{model.thumbnail_height}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:srcCompat="@tools:sample/backgrounds/scenic"
-                android:contentDescription="@string/latest_news" />
+                android:contentDescription="@{model.title}" />
 
-            <ProgressBar
-                android:id="@+id/progress_bar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:indeterminateTint="@color/oragne_500"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/home_news_img"
-                app:layout_constraintStart_toStartOf="@+id/home_news_img"
-                app:layout_constraintTop_toTopOf="@+id/home_news_img" />
+                <ProgressBar
+                    android:id="@+id/progress_bar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:indeterminateTint="@color/oragne_500"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/home_news_img"
+                    app:layout_constraintStart_toStartOf="@+id/home_news_img"
+                    app:layout_constraintTop_toTopOf="@+id/home_news_img" />
 
             <TextView
                 android:id="@+id/latest_news_txt"
@@ -52,12 +53,13 @@
                 android:maxEms="10"
                 android:maxLines="2"
                 android:padding="@dimen/_10sdp"
+                android:text="@{model.title}"
                 android:textColor="@color/light_orange"
                 android:textSize="@dimen/_14sdp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
                 tools:text="This is the main scenic This is the main scenic This is the main scenic This is the main scenic" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 

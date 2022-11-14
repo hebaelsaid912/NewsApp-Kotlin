@@ -1,5 +1,6 @@
 package com.hebaelsaid.android.newsapp_kotlin.ui.feature.home
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -8,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.hebaelsaid.android.newsapp_kotlin.databinding.NewsFeedListItemBinding
 import com.hebaelsaid.android.newsapp_kotlin.domain.model.ui.NewsFeedUiModel
 
+private const val TAG = "NewsListAdapter"
 class NewsListAdapter(private val onItemClickListener: NewsListViewHolder.OnItemClickListener): ListAdapter<NewsFeedUiModel, NewsListAdapter.NewsListViewHolder>(ProductsModelDiffCallback()) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsListViewHolder {
         return NewsListViewHolder.create(parent)
@@ -19,7 +21,7 @@ class NewsListAdapter(private val onItemClickListener: NewsListViewHolder.OnItem
 
     class ProductsModelDiffCallback : DiffUtil.ItemCallback<NewsFeedUiModel>() {
         override fun areItemsTheSame(oldItem: NewsFeedUiModel, newItem: NewsFeedUiModel): Boolean {
-            TODO("Not yet implemented")
+            return oldItem == newItem
         }
 
         override fun areContentsTheSame(oldItem: NewsFeedUiModel, newItem: NewsFeedUiModel): Boolean {
@@ -32,8 +34,7 @@ class NewsListAdapter(private val onItemClickListener: NewsListViewHolder.OnItem
         holder.recycle()
     }
 
-    class NewsListViewHolder(binding: NewsFeedListItemBinding) : RecyclerView.ViewHolder(binding.root) {
-        private var itemRowBinding: NewsFeedListItemBinding = binding
+    class NewsListViewHolder(private val binding: NewsFeedListItemBinding) : RecyclerView.ViewHolder(binding.root) {
         companion object {
             fun create(parent: ViewGroup): NewsListViewHolder {
                 val layoutInflater = LayoutInflater.from(parent.context)
@@ -42,12 +43,16 @@ class NewsListAdapter(private val onItemClickListener: NewsListViewHolder.OnItem
             }
         }
         fun bind(obj: NewsFeedUiModel,onItemClickListener:OnItemClickListener) {
-            itemRowBinding.model = obj
-            itemRowBinding.executePendingBindings()
+            binding.model = obj
+            binding.executePendingBindings()
             itemView.setOnClickListener {
                 onItemClickListener.onItemClick(obj)
             }
+            if(obj.thumbnail_url != null){
+                Log.d(TAG, "bind: title: ${obj.title}")
+            }
         }
+
         fun recycle() {
             itemView.setOnClickListener(null)
         }

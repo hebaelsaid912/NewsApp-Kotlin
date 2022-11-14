@@ -6,10 +6,10 @@ data class NewsFeedsResponseModel(
 ) {
     data class Data(
         val after: String?, // t3_yqsd0g
-        val before: Any?, // null
+        val before: String?, // null
         val children: List<Children?>?,
         val dist: Int?, // 25
-        val geo_filter: Any?, // null
+        val geo_filter: String?, // null
         val modhash: String?
     ) {
         data class Children(
@@ -19,37 +19,37 @@ data class NewsFeedsResponseModel(
             data class Data(
                 val all_awardings: List<AllAwarding?>?,
                 val allow_live_comments: Boolean?, // false
-                val approved_at_utc: Any?, // null
-                val approved_by: Any?, // null
+                val approved_at_utc: String?, // null
+                val approved_by: String?, // null
                 val archived: Boolean?, // false
                 val author: String?, // Top_Engineering_4191
-                val author_flair_background_color: Any?, // null
-                val author_flair_css_class: Any?, // null
-                val author_flair_richtext: List<Any?>?,
-                val author_flair_template_id: Any?, // null
-                val author_flair_text: Any?, // null
-                val author_flair_text_color: Any?, // null
+                val author_flair_background_color: String?, // null
+                val author_flair_css_class: String?, // null
+                val author_flair_richtext: List<String?>?,
+                val author_flair_template_id: String?, // null
+                val author_flair_text: String?, // null
+                val author_flair_text_color: String?, // null
                 val author_flair_type: String?, // text
                 val author_fullname: String?, // t2_c25y4ifs
                 val author_is_blocked: Boolean?, // false
                 val author_patreon_flair: Boolean?, // false
                 val author_premium: Boolean?, // false
-                val awarders: List<Any?>?,
-                val banned_at_utc: Any?, // null
-                val banned_by: Any?, // null
+                val awarders: List<String?>?,
+                val banned_at_utc: String?, // null
+                val banned_by: String?, // null
                 val can_gild: Boolean?, // false
                 val can_mod_post: Boolean?, // false
-                val category: Any?, // null
+                val category: String?, // null
                 val clicked: Boolean?, // false
-                val content_categories: Any?, // null
+                val content_categories: String?, // null
                 val contest_mode: Boolean?, // false
                 val created: Double?, // 1668378633.0
                 val created_utc: Double?, // 1668378633.0
-                val discussion_type: Any?, // null
-                val distinguished: Any?, // null
+                val discussion_type: String?, // null
+                val distinguished: String?, // null
                 val domain: String?, // self.Kotlin
                 val downs: Int?, // 0
-                val edited: Double?, // 1668378453.0
+                val edited: Any?, // 1668378453.0
                 val gilded: Int?, // 0
                 val gildings: Gildings?,
                 val hidden: Boolean?, // false
@@ -63,11 +63,11 @@ data class NewsFeedsResponseModel(
                 val is_robot_indexable: Boolean?, // true
                 val is_self: Boolean?, // true
                 val is_video: Boolean?, // false
-                val likes: Any?, // null
+                val likes: String?, // null
                 val link_flair_background_color: String?,
-                val link_flair_css_class: Any?, // null
-                val link_flair_richtext: List<Any?>?,
-                val link_flair_text: Any?, // null
+                val link_flair_css_class: String?, // null
+                val link_flair_richtext: List<String?>?,
+                val link_flair_text: String?, // null
                 val link_flair_text_color: String?, // dark
                 val link_flair_type: String?, // text
                 val locked: Boolean?, // false
@@ -75,25 +75,25 @@ data class NewsFeedsResponseModel(
                 val media_embed: MediaEmbed?,
                 val media_metadata: MediaMetadata?,
                 val media_only: Boolean?, // false
-                val mod_note: Any?, // null
-                val mod_reason_by: Any?, // null
-                val mod_reason_title: Any?, // null
-                val mod_reports: List<Any?>?,
+                val mod_note: String?, // null
+                val mod_reason_by: String?, // null
+                val mod_reason_title: String?, // null
+                val mod_reports: List<String?>?,
                 val name: String?, // t3_yugrb2
                 val no_follow: Boolean?, // false
                 val num_comments: Int?, // 15
                 val num_crossposts: Int?, // 0
-                val num_reports: Any?, // null
+                val num_reports: String?, // null
                 val over_18: Boolean?, // false
                 val parent_whitelist_status: String?, // all_ads
                 val permalink: String?, // /r/Kotlin/comments/yugrb2/kotlin_and_java_loom_will_kotlin_benefit_from/
                 val pinned: Boolean?, // false
                 val pwls: Int?, // 6
                 val quarantine: Boolean?, // false
-                val removal_reason: Any?, // null
-                val removed_by: Any?, // null
-                val removed_by_category: Any?, // null
-                val report_reasons: Any?, // null
+                val removal_reason: String?, // null
+                val removed_by: String?, // null
+                val removed_by_category: String?, // null
+                val report_reasons: String?, // null
                 val saved: Boolean?, // false
                 val score: Int?, // 23
                 val secure_media: SecureMedia?,
@@ -108,18 +108,18 @@ data class NewsFeedsResponseModel(
                 val subreddit_name_prefixed: String?, // r/Kotlin
                 val subreddit_subscribers: Int?, // 64726
                 val subreddit_type: String?, // public
-                val suggested_sort: Any?, // null
+                val suggested_sort: String?, // null
                 val thumbnail: String?,
                 val title: String?, // Kotlin and Java Loom. Will Kotlin benefit from virtual threads?
-                val top_awarded_type: Any?, // null
+                val top_awarded_type: String?, // null
                 val total_awards_received: Int?, // 0
-                val treatment_tags: List<Any?>?,
+                val treatment_tags: List<String?>?,
                 val ups: Int?, // 23
                 val upvote_ratio: Double?, // 0.9
                 val url: String?, // https://www.reddit.com/r/Kotlin/comments/yugrb2/kotlin_and_java_loom_will_kotlin_benefit_from/
                 val url_overridden_by_dest: String?, // https://www.infoq.com/news/2022/11/meta-port-java-kotlin/
-                val user_reports: List<Any?>?,
-                val view_count: Any?, // null
+                val user_reports: List<String?>?,
+                val view_count: String?, // null
                 val visited: Boolean?, // false
                 val whitelist_status: String?, // all_ads
                 val wls: Int? // 6
@@ -127,15 +127,15 @@ data class NewsFeedsResponseModel(
                 data class AllAwarding(
                     val award_sub_type: String?, // GLOBAL
                     val award_type: String?, // global
-                    val awardings_required_to_grant_benefits: Any?, // null
+                    val awardings_required_to_grant_benefits: String?, // null
                     val coin_price: Int?, // 150
                     val coin_reward: Int?, // 0
                     val count: Int?, // 1
-                    val days_of_drip_extension: Any?, // null
-                    val days_of_premium: Any?, // null
+                    val days_of_drip_extension: String?, // null
+                    val days_of_premium: String?, // null
                     val description: String?, // Thank you stranger. Shows the award.
-                    val end_date: Any?, // null
-                    val giver_coin_reward: Any?, // null
+                    val end_date: String?, // null
+                    val giver_coin_reward: String?, // null
                     val icon_format: String?, // PNG
                     val icon_height: Int?, // 2048
                     val icon_url: String?, // https://i.redd.it/award_images/t5_22cerq/klvxk1wggfd41_Helpful.png
@@ -144,18 +144,18 @@ data class NewsFeedsResponseModel(
                     val is_enabled: Boolean?, // true
                     val is_new: Boolean?, // false
                     val name: String?, // Helpful
-                    val penny_donate: Any?, // null
+                    val penny_donate: String?, // null
                     val penny_price: Int?, // 0
                     val resized_icons: List<ResizedIcon?>?,
                     val resized_static_icons: List<ResizedStaticIcon?>?,
-                    val start_date: Any?, // null
+                    val start_date: String?, // null
                     val static_icon_height: Int?, // 2048
                     val static_icon_url: String?, // https://i.redd.it/award_images/t5_22cerq/klvxk1wggfd41_Helpful.png
                     val static_icon_width: Int?, // 2048
-                    val sticky_duration_seconds: Any?, // null
+                    val sticky_duration_seconds: String?, // null
                     val subreddit_coin_reward: Int?, // 0
-                    val subreddit_id: Any?, // null
-                    val tiers_by_required_awardings: Any? // null
+                    val subreddit_id: String?, // null
+                    val tiers_by_required_awardings: String? // null
                 ) {
                     data class ResizedIcon(
                         val height: Int?, // 16
