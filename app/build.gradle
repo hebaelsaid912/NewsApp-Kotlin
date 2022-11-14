@@ -56,7 +56,7 @@ dependencies {
     //fragment
     implementation 'androidx.navigation:navigation-fragment-ktx:2.5.3'
     implementation 'androidx.navigation:navigation-ui-ktx:2.5.3'
-    //databinding
+    //data binding
     implementation 'androidx.databinding:databinding-runtime:7.3.1'
     // Sd - Dp
     implementation 'com.intuit.sdp:sdp-android:1.0.6'
@@ -65,6 +65,12 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.14.2'
     //coroutines
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
+    //retrofit
+    implementation "com.squareup.retrofit2:retrofit:2.9.0"
+    implementation "com.squareup.retrofit2:converter-gson:2.9.0"
+    implementation "com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2"
+    //gson
+    implementation "com.google.code.gson:gson:2.9.0"
     //room
     implementation "androidx.room:room-ktx:2.4.3"
     implementation "androidx.room:room-runtime:2.4.3"
