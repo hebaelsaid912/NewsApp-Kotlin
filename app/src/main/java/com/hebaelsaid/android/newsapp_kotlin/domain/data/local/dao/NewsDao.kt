@@ -10,9 +10,9 @@ import com.hebaelsaid.android.newsapp_kotlin.domain.data.local.entities.KotlinNe
 @Dao
 interface NewsDao {
     @get:Query("SELECT * FROM kotlin_news ORDER BY id DESC")
-    val getAllCategory:List<KotlinNewsFeed>
+    val getAllKotlinNews:List<KotlinNewsFeed>
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertCategory(category: KotlinNewsFeed)
+    fun insertKotlinNews(category: KotlinNewsFeed)
     @Query("DELETE  FROM kotlin_news")
-    suspend fun clearCategoryDatabase()
+    suspend fun clearKotlinNewsDatabase()
 }
