@@ -6,14 +6,18 @@ import androidx.lifecycle.viewModelScope
 import com.hebaelsaid.android.newsapp_kotlin.domain.data.local.database.NewsDatabase
 import com.hebaelsaid.android.newsapp_kotlin.domain.data.local.entities.KotlinNewsFeed
 import com.hebaelsaid.android.newsapp_kotlin.domain.model.ui.NewsFeedUiModel
+import com.hebaelsaid.android.newsapp_kotlin.ui.feature.splash.SplashViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 private const val TAG = "HomeViewModel"
-class HomeViewModel(private val newsDatabase: NewsDatabase) : ViewModel() {
+@HiltViewModel
+class HomeViewModel @Inject constructor(private val newsDatabase: NewsDatabase) : ViewModel() {
     private val newsFeedDBState = MutableStateFlow<NewsFeedState>(NewsFeedState.Idle)
     val _newsFeedDBState: StateFlow<NewsFeedState> get() = newsFeedDBState
 

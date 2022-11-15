@@ -15,10 +15,12 @@ import com.hebaelsaid.android.newsapp_kotlin.databinding.FragmentSplashBinding
 import com.hebaelsaid.android.newsapp_kotlin.domain.data.local.database.NewsDatabase
 import com.hebaelsaid.android.newsapp_kotlin.domain.data.local.entities.KotlinNewsFeed
 import com.hebaelsaid.android.newsapp_kotlin.utils.CommonFunction.isOnline
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 private const val TAG = "SplashFragment"
+@AndroidEntryPoint
 class SplashFragment : Fragment() {
     private lateinit var binding: FragmentSplashBinding
     private val viewModel by lazy { 

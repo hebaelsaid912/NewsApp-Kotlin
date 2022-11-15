@@ -6,15 +6,17 @@ import androidx.lifecycle.viewModelScope
 import com.hebaelsaid.android.newsapp_kotlin.domain.data.local.entities.KotlinNewsFeed
 import com.hebaelsaid.android.newsapp_kotlin.domain.model.response.news.NewsFeedsResponseModel
 import com.hebaelsaid.android.newsapp_kotlin.repository.NewsFeedRepoImpl
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 private const val TAG = "SplashViewModel"
-
-class SplashViewModel : ViewModel() {
+@HiltViewModel
+class SplashViewModel @Inject constructor(private val newsFeedRepoImpl: NewsFeedRepoImpl) : ViewModel() {
     private val newsFeedApiState = MutableStateFlow<NewsFeedState>(NewsFeedState.Idle)
     val _newsFeedApiState: StateFlow<NewsFeedState> get() = newsFeedApiState
 
@@ -27,7 +29,7 @@ class SplashViewModel : ViewModel() {
 
     suspend fun getNewsFeedData() = viewModelScope.launch(Dispatchers.IO) {
         newsFeedApiState.value = NewsFeedState.Loading
-        val newsFeedList = NewsFeedRepoImpl.getNewsFeed()
+        val newsFeedList = newsFeedRepoImpl.getNewsFeed()
         val newsFeedUiList = getKotlinNewsDataFromApi(newsFeedList)
         delay(1000)
         newsFeedApiState.value = try {
