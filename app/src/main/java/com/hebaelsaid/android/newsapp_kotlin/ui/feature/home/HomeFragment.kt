@@ -35,7 +35,7 @@ class HomeFragment : Fragment() , NewsListAdapter.NewsListViewHolder.OnItemClick
     private fun renderNewsData() {
         lifecycleScope.launchWhenStarted {
 
-            viewModel._newsFeedApiState.collect{ newsItemState ->
+            viewModel._newsFeedDBState.collect{ newsItemState ->
                 when(newsItemState){
                     is HomeViewModel.NewsFeedState.Success -> {
                         Log.d(TAG, "renderNewsData: Success")

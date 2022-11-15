@@ -3,9 +3,9 @@ package com.hebaelsaid.android.newsapp_kotlin.ui.feature.home
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.hebaelsaid.android.newsapp_kotlin.domain.model.response.news.NewsFeedsResponseModel
+import com.hebaelsaid.android.newsapp_kotlin.domain.data.local.database.NewsDatabase
+import com.hebaelsaid.android.newsapp_kotlin.domain.data.local.entities.KotlinNewsFeed
 import com.hebaelsaid.android.newsapp_kotlin.domain.model.ui.NewsFeedUiModel
-import com.hebaelsaid.android.newsapp_kotlin.repository.NewsFeedRepoImpl
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -13,9 +13,9 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
 private const val TAG = "HomeViewModel"
-class HomeViewModel : ViewModel() {
-    private val newsFeedApiState = MutableStateFlow<NewsFeedState>(NewsFeedState.Idle)
-    val _newsFeedApiState: StateFlow<NewsFeedState> get() = newsFeedApiState
+class HomeViewModel(private val newsDatabase: NewsDatabase) : ViewModel() {
+    private val newsFeedDBState = MutableStateFlow<NewsFeedState>(NewsFeedState.Idle)
+    val _newsFeedDBState: StateFlow<NewsFeedState> get() = newsFeedDBState
 
     sealed class NewsFeedState {
         data class Success(val newsFeedList: ArrayList<NewsFeedUiModel>) : NewsFeedState()
@@ -25,22 +25,26 @@ class HomeViewModel : ViewModel() {
     }
 
     suspend fun getNewsFeedData() = viewModelScope.launch(Dispatchers.IO) {
-        newsFeedApiState.value = NewsFeedState.Loading
-        val newsFeedList = NewsFeedRepoImpl.getNewsFeed()
+        newsFeedDBState.value = NewsFeedState.Loading
+        val newsFeedList = newsDatabase.newsDao().getAllKotlinNews
        val newsFeedUiList =  getUIModel(newsFeedList)
         delay(1000)
-        newsFeedApiState.value = NewsFeedState.Success(newsFeedUiList)
+        newsFeedDBState.value = try {
+            NewsFeedState.Success(newsFeedUiList)
+        } catch ( ex: Exception){
+            NewsFeedState.Error(ex.message!!)
+        }
     }
 
-    private fun getUIModel(newsFeedList: NewsFeedsResponseModel):ArrayList<NewsFeedUiModel> {
-        Log.d(TAG, "getUIModel: newsFeedList size: ${newsFeedList.data!!.children!!.size}")
+    private fun getUIModel(newsFeedList: List<KotlinNewsFeed>):ArrayList<NewsFeedUiModel> {
+        Log.d(TAG, "getUIModel: newsFeedList size: ${newsFeedList.size}")
         val newsFeedUiList = ArrayList<NewsFeedUiModel>()
-            for (data in newsFeedList.data!!.children!!) {
+            for (data in newsFeedList) {
                 newsFeedUiList.add(NewsFeedUiModel(
-                    thumbnail_url = data!!.data!!.media?.oembed?.thumbnail_url,
-                    thumbnail_height = data.data!!.media?.oembed?.thumbnail_height,
-                    thumbnail_width = data.data.media?.oembed?.thumbnail_width,
-                    title = data.data.title!!
+                    thumbnail_url = data.news_thumbnail_url,
+                    thumbnail_height = data.news_thumbnail_height,
+                    thumbnail_width = data.news_thumbnail_width,
+                    title = data.news_title
                 ))
         }
         return newsFeedUiList
