@@ -62,6 +62,7 @@ class SplashFragment : Fragment() {
                     }
                     is SplashViewModel.NewsFeedState.Idle -> {
                         Log.d(TAG, "renderNewsData: Idle")
+                        viewModel.getNewsFeedData()
                     }
                 }
 
@@ -88,5 +89,3 @@ class SplashFragment : Fragment() {
             }
         }
     }
-
-}

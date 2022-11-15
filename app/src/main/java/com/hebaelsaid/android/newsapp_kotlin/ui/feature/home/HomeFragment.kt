@@ -10,20 +10,22 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.hebaelsaid.android.newsapp_kotlin.databinding.FragmentHomeBinding
+import com.hebaelsaid.android.newsapp_kotlin.domain.data.local.database.NewsDatabase
 import com.hebaelsaid.android.newsapp_kotlin.domain.model.ui.NewsFeedUiModel
 
 private const val TAG = "HomeFragment"
 class HomeFragment : Fragment() , NewsListAdapter.NewsListViewHolder.OnItemClickListener{
     private lateinit var binding:FragmentHomeBinding
-    private val viewModel: HomeViewModel by lazy {
+    private lateinit var viewModel: HomeViewModel/* by lazy {
         ViewModelProvider(this)[HomeViewModel::class.java]
-    }
+    }*/
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
         binding =  FragmentHomeBinding.inflate(inflater, container, false)
+        viewModel = HomeViewModel(NewsDatabase.getDatabase(requireContext()))
         return binding.root
     }
 
