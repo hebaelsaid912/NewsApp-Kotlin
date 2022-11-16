@@ -42,7 +42,8 @@ The following diagram shows all the modules and how each module interact with on
        - multiple Fragment handled together using Navigation.
     - Repository Design Pattern 
 - Retrofit2 & Gson - construct the REST APIs.
--  Coroutines for asynchronous.
+- Coroutines for asynchronous.
+- Room Database - local database to keep displaying scanned items even if the app is closed or the phone is rebooted.
 - Glide for image loading
 - Scalable Unit 
   - text size.
