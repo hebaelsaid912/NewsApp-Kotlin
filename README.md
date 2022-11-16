@@ -25,11 +25,11 @@ You can clone code and run it using :
 | | | |
 |:-------------------------:|:-------------------------:|:-------------------------:|
 |![photo_2022-11-16_15-11-28](https://user-images.githubusercontent.com/72816466/202192094-f6f21d84-d30a-4ebd-83f0-628511d54342.jpg)
-| ![photo_2022-11-16_15-11-30](https://user-images.githubusercontent.com/72816466/202192206-15d04dac-3130-4023-a778-9ac69f85e3b4.jpg)
-|![photo_2022-11-16_15-11-29 (2)](https://user-images.githubusercontent.com/72816466/202192291-1b393f60-3080-429b-afb5-3ffd8278e858.jpg)
+![photo_2022-11-16_15-11-30](https://user-images.githubusercontent.com/72816466/202192206-15d04dac-3130-4023-a778-9ac69f85e3b4.jpg)
+![photo_2022-11-16_15-11-29 (2)](https://user-images.githubusercontent.com/72816466/202192291-1b393f60-3080-429b-afb5-3ffd8278e858.jpg)
 |![photo_2022-11-16_15-11-29](https://user-images.githubusercontent.com/72816466/202192367-b2faa989-f286-4f75-a90c-ac714797857b.jpg)
-|![photo_2022-11-16_15-11-30 (2)](https://user-images.githubusercontent.com/72816466/202192426-4b28544e-c4d2-45d5-a490-b2c19c49a983.jpg)
-|  ![photo_2022-11-16_15-11-30 (3)](https://user-images.githubusercontent.com/72816466/202192471-deba28f6-c471-4312-9f49-53986775b1f1.jpg)
+![photo_2022-11-16_15-11-30 (2)](https://user-images.githubusercontent.com/72816466/202192426-4b28544e-c4d2-45d5-a490-b2c19c49a983.jpg)
+  ![photo_2022-11-16_15-11-30 (3)](https://user-images.githubusercontent.com/72816466/202192471-deba28f6-c471-4312-9f49-53986775b1f1.jpg)
 |![photo_2022-11-16_15-11-31](https://user-images.githubusercontent.com/72816466/202192514-2bb0ea64-1772-4f6b-9345-982ade36f27d.jpg)|
 
 ## Architecture
