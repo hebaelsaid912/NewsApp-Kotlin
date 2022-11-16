@@ -1,4 +1,4 @@
-package com.hebaelsaid.android.newsapp_kotlin.domain.data.local.entities
+package com.hebaelsaid.android.newsapp_kotlin.data.local.entities
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

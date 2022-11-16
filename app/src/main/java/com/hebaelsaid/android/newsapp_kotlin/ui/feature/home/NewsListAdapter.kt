@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.hebaelsaid.android.newsapp_kotlin.databinding.NewsFeedListItemBinding
-import com.hebaelsaid.android.newsapp_kotlin.domain.model.ui.NewsFeedUiModel
+import com.hebaelsaid.android.newsapp_kotlin.domain.uimodel.NewsFeedUiModel
 
 private const val TAG = "NewsListAdapter"
 class NewsListAdapter(private val onItemClickListener: NewsListViewHolder.OnItemClickListener): ListAdapter<NewsFeedUiModel, NewsListAdapter.NewsListViewHolder>(ProductsModelDiffCallback()) {
@@ -42,7 +42,7 @@ class NewsListAdapter(private val onItemClickListener: NewsListViewHolder.OnItem
                 return NewsListViewHolder(binding)
             }
         }
-        fun bind(obj: NewsFeedUiModel,onItemClickListener:OnItemClickListener) {
+        fun bind(obj: NewsFeedUiModel, onItemClickListener:OnItemClickListener) {
             binding.model = obj
             binding.executePendingBindings()
             itemView.setOnClickListener {

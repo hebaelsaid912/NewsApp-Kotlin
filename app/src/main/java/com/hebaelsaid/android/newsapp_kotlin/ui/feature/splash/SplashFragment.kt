@@ -12,8 +12,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.hebaelsaid.android.newsapp_kotlin.databinding.FragmentSplashBinding
-import com.hebaelsaid.android.newsapp_kotlin.domain.data.local.database.NewsDatabase
-import com.hebaelsaid.android.newsapp_kotlin.domain.data.local.entities.KotlinNewsFeed
+import com.hebaelsaid.android.newsapp_kotlin.data.local.database.NewsDatabase
+import com.hebaelsaid.android.newsapp_kotlin.data.local.entities.KotlinNewsFeed
 import com.hebaelsaid.android.newsapp_kotlin.utils.CommonFunction.isOnline
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers

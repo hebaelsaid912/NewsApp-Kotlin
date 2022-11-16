@@ -1,4 +1,4 @@
-package com.hebaelsaid.android.newsapp_kotlin.domain.model.ui
+package com.hebaelsaid.android.newsapp_kotlin.domain.uimodel
 
 data class NewsFeedUiModel(
     val thumbnail_url:String?=null,

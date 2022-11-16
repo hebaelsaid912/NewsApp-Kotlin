@@ -3,9 +3,9 @@ package com.hebaelsaid.android.newsapp_kotlin.ui.feature.splash
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.hebaelsaid.android.newsapp_kotlin.domain.data.local.entities.KotlinNewsFeed
-import com.hebaelsaid.android.newsapp_kotlin.domain.model.response.news.NewsFeedsResponseModel
-import com.hebaelsaid.android.newsapp_kotlin.repository.NewsFeedRepoImpl
+import com.hebaelsaid.android.newsapp_kotlin.data.local.entities.KotlinNewsFeed
+import com.hebaelsaid.android.newsapp_kotlin.data.remote.responsemodel.NewsFeedsResponseModel
+import com.hebaelsaid.android.newsapp_kotlin.data.repository.NewsFeedRepoImpl
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay

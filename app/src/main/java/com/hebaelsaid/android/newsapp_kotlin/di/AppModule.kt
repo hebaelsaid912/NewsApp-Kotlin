@@ -1,8 +1,7 @@
 package com.hebaelsaid.android.newsapp_kotlin.di
 
 
-import com.hebaelsaid.android.newsapp_kotlin.domain.data.remote.news.NewsApiService
-import com.hebaelsaid.android.newsapp_kotlin.repository.NewsFeedRepoImpl
+import com.hebaelsaid.android.newsapp_kotlin.data.remote.client.NewsApiService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -19,7 +18,7 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideRedditNewsApi(): NewsApiService{
+    fun provideRedditNewsApi(): NewsApiService {
         return Retrofit.Builder()
             .baseUrl(NEWS_BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())

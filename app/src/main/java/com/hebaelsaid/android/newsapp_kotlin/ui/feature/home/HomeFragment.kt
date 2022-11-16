@@ -10,8 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.hebaelsaid.android.newsapp_kotlin.databinding.FragmentHomeBinding
-import com.hebaelsaid.android.newsapp_kotlin.domain.data.local.database.NewsDatabase
-import com.hebaelsaid.android.newsapp_kotlin.domain.model.ui.NewsFeedUiModel
+import com.hebaelsaid.android.newsapp_kotlin.domain.uimodel.NewsFeedUiModel
 import dagger.hilt.android.AndroidEntryPoint
 
 private const val TAG = "HomeFragment"

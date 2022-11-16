@@ -6,7 +6,7 @@
     <data>
         <variable
             name="model"
-            type="com.hebaelsaid.android.newsapp_kotlin.domain.model.ui.NewsFeedUiModel" />
+            type="com.hebaelsaid.android.newsapp_kotlin.domain.uimodel.NewsFeedUiModel" />
     </data>
 
     <androidx.cardview.widget.CardView
