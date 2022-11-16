@@ -1,4 +1,4 @@
-package com.hebaelsaid.android.newsapp_kotlin.data.repository
+package com.hebaelsaid.android.newsapp_kotlin.domain.repository
 
 import com.hebaelsaid.android.newsapp_kotlin.data.remote.client.NewsApiService
 import com.hebaelsaid.android.newsapp_kotlin.data.remote.responsemodel.NewsFeedsResponseModel
