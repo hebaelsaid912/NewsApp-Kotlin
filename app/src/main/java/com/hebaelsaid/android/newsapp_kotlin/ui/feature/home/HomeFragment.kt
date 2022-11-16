@@ -73,7 +73,7 @@ class HomeFragment : Fragment() , NewsListAdapter.NewsListViewHolder.OnItemClick
     }
 
     override fun onItemClick(newsFeedUiModel: NewsFeedUiModel?) {
-        findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToDetailsFragment())
+        findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToDetailsFragment(newsFeedUiModel!!))
     }
 
 }

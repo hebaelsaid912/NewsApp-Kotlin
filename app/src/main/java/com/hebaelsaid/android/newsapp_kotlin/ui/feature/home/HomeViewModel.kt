@@ -48,8 +48,8 @@ class HomeViewModel @Inject constructor(private val newsDatabase: NewsDatabase) 
                     thumbnail_url = data.news_thumbnail_url,
                     thumbnail_height = data.news_thumbnail_height,
                     thumbnail_width = data.news_thumbnail_width,
-                    title = data.news_title
-                )
+                    title = data.news_title,
+                    description = data.news_self_text)
                 )
         }
         return newsFeedUiList

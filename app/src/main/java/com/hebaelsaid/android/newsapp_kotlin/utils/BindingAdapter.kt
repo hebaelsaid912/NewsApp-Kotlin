@@ -12,7 +12,7 @@ import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
 
 
-@BindingAdapter("app:bindImgUrl", "app:bindProgressItem","app:bindImgWidth", "app:bindImgHeight")
+@BindingAdapter("android:bindImgUrl", "android:bindProgressItem","android:bindImgWidth", "android:bindImgHeight")
 fun setGlideImageUrl(
     image: ImageView,
     url: String?,
@@ -44,17 +44,11 @@ fun setGlideImageUrl(
                     progressBar?.visibility = View.GONE
                     return false
                 }
-            }).into(image)
+            })
+            //.override(width,height)
+            .into(image)
     }else{
         progressBar?.visibility = View.GONE
+        image.visibility = View.GONE
     }
 }
-
-/*
-@BindingAdapter("app:bindImgWidth", "app:bindImgHeight")
-fun setImageRatio(image: ImageView, width: Int?, height: Int?) {
-    if (width != null && height != null) {
-        image.maxWidth = width
-        image.maxHeight = height
-    }
-}*/

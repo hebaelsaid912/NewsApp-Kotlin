@@ -6,10 +6,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.hebaelsaid.android.newsapp_kotlin.databinding.FragmentDetailsBinding
+import com.hebaelsaid.android.newsapp_kotlin.domain.uimodel.NewsFeedUiModel
 
 private const val TAG = "DetailsFragment"
+
 class DetailsFragment : Fragment() {
     private lateinit var binding: FragmentDetailsBinding
+    private lateinit var newsModel: NewsFeedUiModel
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        newsModel = arguments?.getParcelable<NewsFeedUiModel>("news_desc")!!
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -20,5 +28,9 @@ class DetailsFragment : Fragment() {
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.model = newsModel
+    }
 
 }
