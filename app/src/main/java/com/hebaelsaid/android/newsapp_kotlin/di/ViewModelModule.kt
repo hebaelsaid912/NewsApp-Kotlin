@@ -3,7 +3,7 @@ package com.hebaelsaid.android.newsapp_kotlin.di
 import android.content.Context
 import com.hebaelsaid.android.newsapp_kotlin.data.local.database.NewsDatabase
 import com.hebaelsaid.android.newsapp_kotlin.data.remote.client.NewsApiService
-import com.hebaelsaid.android.newsapp_kotlin.data.repository.NewsFeedRepoImpl
+import com.hebaelsaid.android.newsapp_kotlin.domain.repository.NewsFeedRepoImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

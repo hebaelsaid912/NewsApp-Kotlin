@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.hebaelsaid.android.newsapp_kotlin.data.local.entities.KotlinNewsFeed
 import com.hebaelsaid.android.newsapp_kotlin.data.remote.responsemodel.NewsFeedsResponseModel
-import com.hebaelsaid.android.newsapp_kotlin.data.repository.NewsFeedRepoImpl
+import com.hebaelsaid.android.newsapp_kotlin.domain.repository.NewsFeedRepoImpl
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
