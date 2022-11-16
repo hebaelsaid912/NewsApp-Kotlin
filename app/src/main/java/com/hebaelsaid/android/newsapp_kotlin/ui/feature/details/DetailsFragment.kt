@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.hebaelsaid.android.newsapp_kotlin.databinding.FragmentDetailsBinding
 import com.hebaelsaid.android.newsapp_kotlin.domain.uimodel.NewsFeedUiModel
 
@@ -31,6 +32,9 @@ class DetailsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.model = newsModel
+        binding.newsDetailsBackImg.setOnClickListener {
+            findNavController().navigateUp()
+        }
     }
 
 }
