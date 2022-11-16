@@ -32,13 +32,7 @@ class HomeFragment : Fragment() , NewsListAdapter.NewsListViewHolder.OnItemClick
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        if(isOnline(requireContext())) {
             renderNewsData()
-            binding.notInternetConnectionLayout.root.visibility = View.GONE
-        }else{
-            binding.notInternetConnectionLayout.root.visibility = View.VISIBLE
-            binding.mainEmptyView.visibility = View.GONE
-        }
     }
 
     private fun renderNewsData() {
@@ -50,7 +44,14 @@ class HomeFragment : Fragment() , NewsListAdapter.NewsListViewHolder.OnItemClick
                         Log.d(TAG, "renderNewsData: Success")
                         Log.d(TAG, "renderNewsData: newsList size: ${newsItemState.newsFeedList.size}")
                         binding.mainEmptyView.visibility = View.GONE
-                        setUpNewsList(newsItemState.newsFeedList)
+                        if(newsItemState.newsFeedList.isNotEmpty()) {
+                            setUpNewsList(newsItemState.newsFeedList)
+                        }else{
+                            if(!isOnline(requireContext())) {
+                                binding.notInternetConnectionLayout.root.visibility = View.VISIBLE
+                            }
+                            binding.mainEmptyView.visibility = View.GONE
+                        }
                     }
                     is HomeViewModel.NewsFeedState.Loading -> {
                         Log.d(TAG, "renderNewsData: Loading")
