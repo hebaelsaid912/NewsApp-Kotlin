@@ -1,4 +1,4 @@
-package com.hebaelsaid.android.newsapp_kotlin.domain.model.response.news
+package com.hebaelsaid.android.newsapp_kotlin.data.remote.responsemodel
 
 data class NewsFeedsResponseModel(
     val `data`: Data?,

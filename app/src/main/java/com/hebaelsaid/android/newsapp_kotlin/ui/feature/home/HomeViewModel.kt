@@ -3,10 +3,9 @@ package com.hebaelsaid.android.newsapp_kotlin.ui.feature.home
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.hebaelsaid.android.newsapp_kotlin.domain.data.local.database.NewsDatabase
-import com.hebaelsaid.android.newsapp_kotlin.domain.data.local.entities.KotlinNewsFeed
-import com.hebaelsaid.android.newsapp_kotlin.domain.model.ui.NewsFeedUiModel
-import com.hebaelsaid.android.newsapp_kotlin.ui.feature.splash.SplashViewModel
+import com.hebaelsaid.android.newsapp_kotlin.data.local.database.NewsDatabase
+import com.hebaelsaid.android.newsapp_kotlin.data.local.entities.KotlinNewsFeed
+import com.hebaelsaid.android.newsapp_kotlin.domain.uimodel.NewsFeedUiModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -44,12 +43,14 @@ class HomeViewModel @Inject constructor(private val newsDatabase: NewsDatabase) 
         Log.d(TAG, "getUIModel: newsFeedList size: ${newsFeedList.size}")
         val newsFeedUiList = ArrayList<NewsFeedUiModel>()
             for (data in newsFeedList) {
-                newsFeedUiList.add(NewsFeedUiModel(
+                newsFeedUiList.add(
+                    NewsFeedUiModel(
                     thumbnail_url = data.news_thumbnail_url,
                     thumbnail_height = data.news_thumbnail_height,
                     thumbnail_width = data.news_thumbnail_width,
-                    title = data.news_title
-                ))
+                    title = data.news_title,
+                    description = data.news_self_text)
+                )
         }
         return newsFeedUiList
     }

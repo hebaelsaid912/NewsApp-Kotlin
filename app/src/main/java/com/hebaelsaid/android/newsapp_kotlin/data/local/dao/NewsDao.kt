@@ -1,10 +1,10 @@
-package com.hebaelsaid.android.newsapp_kotlin.domain.data.local.dao
+package com.hebaelsaid.android.newsapp_kotlin.data.local.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.hebaelsaid.android.newsapp_kotlin.domain.data.local.entities.KotlinNewsFeed
+import com.hebaelsaid.android.newsapp_kotlin.data.local.entities.KotlinNewsFeed
 
 
 @Dao

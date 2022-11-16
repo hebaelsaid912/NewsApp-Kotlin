@@ -38,33 +38,30 @@
             app:layout_constraintTop_toBottomOf="@+id/textView"
             tools:listitem="@layout/news_feed_list_item" />
         <!-- Empty view for the list -->
-        <LinearLayout
+
+        <TextView
             android:id="@+id/main_empty_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:elevation="@dimen/_5sdp"
-            android:gravity="center"
-            android:orientation="vertical"
+            android:drawablePadding="@dimen/_10sdp"
+            android:paddingTop="8dp"
+            android:text="@string/there_is_no_news_feeds_appear"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textStyle="bold"
+            app:drawableTopCompat="@drawable/news"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:layout_width="90dp"
-                android:layout_height="@dimen/_90sdp"
-                android:src="@drawable/news" />
-
-            <TextView
-                android:id="@+id/empty_title_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="8dp"
-                android:text="@string/there_is_no_news_feeds_appear"
-                android:textAppearance="?android:textAppearanceMedium"
-                android:textStyle="bold" />
-        </LinearLayout>
-
+        <include
+            android:id="@+id/not_internet_connection_layout"
+            layout="@layout/no_internet_connection"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
