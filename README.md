@@ -50,3 +50,8 @@ The following diagram shows all the modules and how each module interact with on
   - text size.
   - unit size.
 - Dependency Injection (dagger-hilt).
+
+## Release APK
+
+
+Go to the [App Release](https://github.com/hebaelsaid912/NewsApp-Kotlin/blob/master/app/release/news-app-release.apk) to download the latest APK.
