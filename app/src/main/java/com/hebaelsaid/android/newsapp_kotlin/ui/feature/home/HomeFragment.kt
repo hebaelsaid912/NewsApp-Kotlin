@@ -11,6 +11,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.hebaelsaid.android.newsapp_kotlin.databinding.FragmentHomeBinding
 import com.hebaelsaid.android.newsapp_kotlin.domain.uimodel.NewsFeedUiModel
+import com.hebaelsaid.android.newsapp_kotlin.utils.common.CommonFunction.isOnline
 import dagger.hilt.android.AndroidEntryPoint
 
 private const val TAG = "HomeFragment"
@@ -26,13 +27,18 @@ class HomeFragment : Fragment() , NewsListAdapter.NewsListViewHolder.OnItemClick
     ): View {
         // Inflate the layout for this fragment
         binding =  FragmentHomeBinding.inflate(inflater, container, false)
-       // viewModel = HomeViewModel(NewsDatabase.getDatabase(requireContext()))
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        renderNewsData()
+        if(isOnline(requireContext())) {
+            renderNewsData()
+            binding.notInternetConnectionLayout.root.visibility = View.GONE
+        }else{
+            binding.notInternetConnectionLayout.root.visibility = View.VISIBLE
+            binding.mainEmptyView.visibility = View.GONE
+        }
     }
 
     private fun renderNewsData() {
