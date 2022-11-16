@@ -22,8 +22,7 @@ You can clone code and run it using :
 
 ## App ScreenShots 
 
-| | | |
-|:-------------------------:|:-------------------------:|:-------------------------:|
+|:-------------------------:|
 |![photo_2022-11-16_15-11-28](https://user-images.githubusercontent.com/72816466/202192094-f6f21d84-d30a-4ebd-83f0-628511d54342.jpg)
 ![photo_2022-11-16_15-11-30](https://user-images.githubusercontent.com/72816466/202192206-15d04dac-3130-4023-a778-9ac69f85e3b4.jpg)
 ![photo_2022-11-16_15-11-29 (2)](https://user-images.githubusercontent.com/72816466/202192291-1b393f60-3080-429b-afb5-3ffd8278e858.jpg)
