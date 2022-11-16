@@ -1,4 +1,4 @@
-package com.hebaelsaid.android.newsapp_kotlin.utils
+package com.hebaelsaid.android.newsapp_kotlin.utils.common
 
 import android.content.Context
 import android.net.ConnectivityManager

@@ -14,7 +14,7 @@ import androidx.navigation.fragment.findNavController
 import com.hebaelsaid.android.newsapp_kotlin.databinding.FragmentSplashBinding
 import com.hebaelsaid.android.newsapp_kotlin.data.local.database.NewsDatabase
 import com.hebaelsaid.android.newsapp_kotlin.data.local.entities.KotlinNewsFeed
-import com.hebaelsaid.android.newsapp_kotlin.utils.CommonFunction.isOnline
+import com.hebaelsaid.android.newsapp_kotlin.utils.common.CommonFunction.isOnline
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
