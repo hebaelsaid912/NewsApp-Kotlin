@@ -21,6 +21,7 @@ fun setGlideImageUrl(
     height: Int?
 ) {
     if (width != null && height != null) {
+        image.visibility = View.VISIBLE
         Glide.with(image.context)
             .load(url)
             .listener(object : RequestListener<Drawable> {
